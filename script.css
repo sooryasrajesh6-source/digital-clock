@@ -1,0 +1,18 @@
+function updateClock() {
+  const now = new Date();
+
+  const time = now.toLocaleTimeString();
+
+  const date = now.toLocaleDateString("en-US", {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric"
+  });
+
+  document.getElementById("clock").textContent = time;
+  document.getElementById("date").textContent = date;
+}
+
+updateClock();
+setInterval(updateClock, 1000);
